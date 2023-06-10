@@ -1,10 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Skeleton from "react-loading-skeleton";
+import { SiteContext } from "../Contexts/SiteContext";
 
-const AppNav = ({ loading, data }) => {
+const AppNav = () => {
+  // Get Context Data For Navbar
+  const contextData = useContext(SiteContext);
+  const data = contextData.data?? {
+    site_name:"Ronza"
+  }
+  const loading  = contextData.loading;
+  
+
   const [navBackground, setNavBackground] = useState(false);
   const navRef = useRef();
   navRef.current = navBackground;
@@ -38,7 +47,7 @@ const AppNav = ({ loading, data }) => {
               {loading ? (
                 <Skeleton width={100} height={30} baseColor="#ddd" />
               ) : (
-                data.site_name
+                data.site_name ?? "Ronza"
               )}
             </div>
           </Navbar.Brand>
