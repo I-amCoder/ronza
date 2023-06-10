@@ -1,9 +1,8 @@
 import Carousel from "react-bootstrap/Carousel";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Hero = ({ hero }) => {
-  console.log(hero);
   // const [images, setImages] = useState([]);
   // useEffect(() => {
   //   return () => {
@@ -24,20 +23,20 @@ const Hero = ({ hero }) => {
 
   return (
     <Carousel fade>
-      {hero.items.map((image, index) => {
-        const { imagepath, title, subtitle } = image;
+      {hero.map((image, index) => {
+        const { urls, title, subtitle } = image;
 
         return (
           <Carousel.Item key={index}>
             <img
               className="d-block w-100 carousel-image"
-              src={imagepath}
+              src={urls.regular}
               alt="First slide"
             />
             <Carousel.Caption>
               <div className="c-caption">
-                <h3>{title}</h3>
-                <p>{subtitle}</p>
+                <h3>{title || "title"}</h3>
+                <p>{subtitle || "description"}</p>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

@@ -5,9 +5,10 @@ import Footer from "./Components/Footer";
 import Hero from "./Components/Hero";
 import ProductCarousel from "./Components/ProductCarousel";
 import SocialSection from "./Components/SocialSection";
-import api from "./assets/data.json";
+import api from "./data.json";
 import ContactUs from "./Components/ContactUs";
 import "react-loading-skeleton/dist/skeleton.css";
+import { config } from "./config";
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -15,32 +16,34 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [hero, setHero] = useState([]);
   const [sections, setSections] = useState([]);
-
-  useEffect(() => {
-    return () => {
-      loadImages();
-      loadHomePageData();
-    };
-  }, []);
+  const apiUrl = config.url.API_URL;
 
   const loadHomePageData = () => {
-    const url = "http://127.0.0.1:8000/api/home-stuff";
+    const url = `${apiUrl}/home-stuff`;
     fetch(url)
       .then((response) => response.json())
       .then((myJson) => {
         processApi(myJson.data);
         setLoading(false);
+      })
+      .catch((e) => {
+        console.log(e);
       });
   };
   const processApi = (apiData) => {
     setData(apiData);
-    setHero(apiData.hero);
+    setHero(api.results);
     setSections(apiData.sections.filter((section) => section.type !== "hero"));
   };
 
   const loadImages = () => {
     setImages(api.results);
   };
+
+  useEffect(() => {
+    loadHomePageData();
+    loadImages();
+  }, []);
   return (
     <>
       <div className="header">
