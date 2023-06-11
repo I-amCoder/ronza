@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SiteContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/ronza">
         <App />
       </BrowserRouter>
     </SiteContextProvider>
