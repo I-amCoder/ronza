@@ -18,8 +18,8 @@ const App = () => {
         <AppNav  ></AppNav>
         {!context.loading && <Hero hero={context.hero} />}
       </div>
-      <Routes>
-        <Route path="/">
+      <Routes >
+        <Route path="/" >
           <Route path="/" index element={<Home />} />
         </Route>
       </Routes>

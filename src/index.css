@@ -1,3 +1,28 @@
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #da22ff 0%,
+    #9733ee 51%,
+    #da22ff 100%
+  );
+
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 .header {
   background-image: linear-gradient(
       to bottom,
@@ -98,7 +123,7 @@
   height: 150px;
   border-radius: 100%;
 }
-.feature-text   ,
+.feature-text,
 .feature-text p {
   text-align: center;
 }
@@ -437,9 +462,9 @@ textarea.input100 {
 /* End Contact Us css */
 
 .product-listing-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
   padding: 20px;
 }
 
@@ -484,7 +509,40 @@ textarea.input100 {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: ease-in 0.2s;
+  position: relative;
+  cursor: pointer;
 }
+.image-container {
+  position: relative;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  padding: 10px;
+  width: 3rem;
+  width: 3rem;
+  border: none;
+  border-radius: 3px;
+}
+.view-btn .eye-icon {
+  font-size: 1.2rem;
+}
+
 .product .details {
   padding: 20px;
   padding-bottom: 10px;
@@ -500,10 +558,7 @@ textarea.input100 {
 }
 .product:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  opacity: 0.8;
 }
-
-
 
 /* Landscape tablets and medium desktops */
 @media (max-width: 1199px) {

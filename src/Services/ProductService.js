@@ -1,0 +1,27 @@
+import axios from "axios";
+import { config } from "../config";
+
+export const getCategories = async () => {
+  try {
+    const response = await axios.get(`${config.url.API_URL}/get-categories`);
+    return response.data;
+  } catch (error) {
+    console.error('Error while fetching user:', error);
+    throw error;
+  }
+};
+
+export const getProducts = async (category,page=1)=>{
+    try {
+        const response = await axios.get(`${config.url.API_URL}/get-products/${category}?page=${page}`)
+        return response.data;
+    } catch (error) {
+        console(error);
+    }
+}
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+    getCategories,
+    getProducts
+};

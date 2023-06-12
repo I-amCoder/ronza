@@ -7,11 +7,14 @@ import reportWebVitals from "./reportWebVitals";
 import { SiteContextProvider } from "./Contexts/SiteContext";
 import { BrowserRouter } from "react-router-dom";
 
+import {config} from './config'
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SiteContextProvider>
-      <BrowserRouter basename="/ronza">
+      <BrowserRouter basename={config.url.base_url}>
         <App />
       </BrowserRouter>
     </SiteContextProvider>

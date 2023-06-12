@@ -1,12 +1,13 @@
 const prod = {
   url: {
-    API_URL: "https://myapp.herokuapp.com",
-    API_URL_USERS: "https://myapp.herokuapp.com/users",
+    API_URL: "https://junaid.pakistantradepk.com/api",
+    base_url: "/ronza"
   },
 };
 const dev = {
   url: {
-    API_URL: "http://localhost:8000/api",
+    API_URL: "http://127.0.0.1:8000/api",
+    base_url: "/"
   },
 };
 export const config = process.env.NODE_ENV === "development" ? dev : prod;

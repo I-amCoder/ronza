@@ -1,16 +1,12 @@
 import React from "react";
 import { BsInstagram, BsPinterest, BsTwitter } from "react-icons/bs";
 
-import {
-  FaFacebook,
-  FaInstagram,
-  FaInstagramSquare,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 
 const SocialSection = ({ data, loading }) => {
+  
+  
   return (
     <section className="social-section container my-5">
       <div className="row">
@@ -24,7 +20,7 @@ const SocialSection = ({ data, loading }) => {
               <Skeleton className="mx-2" inline width={30} height={30} />
             ) : (
               data.youtube && (
-                <a className="youtube" target={"_blank"} href={data.youtube}>
+                <a className="youtube" target={"_blank"} href={data.youtube} rel="noreferrer">
                   <FaYoutube />
                 </a>
               )
@@ -33,7 +29,7 @@ const SocialSection = ({ data, loading }) => {
               <Skeleton className="mx-2" inline width={30} height={30} />
             ) : (
               data.facebook && (
-                <a className="facebook" target={"_blank"} href={data.facebook}>
+                <a className="facebook" target={"_blank"} href={data.facebook} rel="noreferrer">
                   <FaFacebook />
                 </a>
               )
@@ -45,7 +41,7 @@ const SocialSection = ({ data, loading }) => {
                 <a
                   className="instagram"
                   target={"_blank"}
-                  href={data.instagram}
+                  href={data.instagram} rel="noreferrer"
                 >
                   <BsInstagram />
                 </a>
@@ -55,7 +51,7 @@ const SocialSection = ({ data, loading }) => {
               <Skeleton className="mx-2" inline width={30} height={30} />
             ) : (
               data.twitter && (
-                <a className="twitter" target={"_blank"} href={data.twitter}>
+                <a className="twitter" target={"_blank"} href={data.twitter} rel="noreferrer">
                   <BsTwitter />
                 </a>
               )
@@ -67,7 +63,7 @@ const SocialSection = ({ data, loading }) => {
                 <a
                   className="pinterest"
                   target={"_blank"}
-                  href={data.pinterest}
+                  href={data.pinterest} rel="noreferrer"
                 >
                   <BsPinterest />
                 </a>
