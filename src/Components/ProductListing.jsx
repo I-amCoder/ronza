@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { FaEye } from "react-icons/fa";
 import apiService from "../Services/ProductService";
 import Product from "./Product";
 
 const ProductListing = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
-  const [Products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
   const fetchCategories = async () => {
     try {
-      await apiService.getCategories().then((data)=>{
+      await apiService.getCategories().then((data) => {
         setCategories(data.data);
       });
     } catch (e) {
       console.log(e);
     }
   };
-  
 
   useEffect(() => {
     fetchCategories();
@@ -28,22 +25,30 @@ const ProductListing = () => {
       <div className="category-label text-center mb-4">
         <h1>Browse Categories</h1>
       </div>
-      <div className="category-tabs">
-        <button
-          className={currentCategory === "All" ? "active" : ""}
-          onClick={() => setCurrentCategory("All")}
-        >
-          All
-        </button>
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            className={currentCategory === category.id ? "active" : ""}
-            onClick={() => setCurrentCategory(category.id)}
-          >
-            {category.name}
-          </button>
-        ))}
+      <div className="container">
+        <div className="category-container">
+          <div className="category-tabs">
+            <div className="tab-item">
+              <button
+                className={currentCategory === "All" ? "active" : ""}
+                onClick={() => setCurrentCategory("All")}
+              >
+                All
+              </button>
+            </div>
+            {categories.map((category) => (
+              <div key={category.id} className="tab-item">
+                <button
+                  key={category.id}
+                  className={currentCategory === category.id ? "active" : ""}
+                  onClick={() => setCurrentCategory(category.id)}
+                >
+                  {category.name}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <Product category={currentCategory} />
     </div>

@@ -9,18 +9,19 @@ import ProductListing from "../Components/ProductListing";
 
 const Home = () => {
   const { images,data, loading } = useContext(SiteContext);
+  // console.log(data.carousel);
   return (
     <>
       <ProductCarousel
         images={images}
         title={"Latest Products"}
       ></ProductCarousel>
+      <ProductListing />
       <FeaturedProducts images={images} />
       <ProductCarousel
         images={images.slice(2, 7)}
         title={"Limited Sale"}
       ></ProductCarousel>
-      <ProductListing />
       <ContactUs />
       <SocialSection data={data} loading={loading} />
     </>

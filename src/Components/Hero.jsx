@@ -1,36 +1,23 @@
 import Carousel from "react-bootstrap/Carousel";
 
-import React from "react";
+import React, { useContext } from "react";
+import { SiteContext } from "../Contexts/SiteContext";
 
-const Hero = ({ hero }) => {
-  // const [images, setImages] = useState([]);
-  // useEffect(() => {
-  //   return () => {
-  //     loadImages();
-  //   };
-  // }, []);
 
-  // const loadImages = () => {
-  //   console.log("fetching");
-  //   fetch(
-  //     "https://api.unsplash.com/photos/?client_id=B3eNrrOIeBFdr9pohQqaEPSXOYfuX-hacP2cNBcKY4s"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setImages(data);
-  //     });
-  // };
+const Hero = () => {
+  const {data, loading} = useContext(SiteContext)
+
 
   return (
     <Carousel fade>
-      {hero.map((image, index) => {
-        const { urls, title, subtitle } = image;
+      {!loading && data.carousels.map((item, index) => {
+        const { subtitle, title, product } = item;
 
         return (
           <Carousel.Item key={index}>
             <img
               className="d-block w-100 carousel-image"
-              src={urls.regular}
+              src={product.imagePath}
               alt="First slide"
             />
             <Carousel.Caption>
