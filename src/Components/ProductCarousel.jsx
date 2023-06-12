@@ -25,7 +25,7 @@ const responsive = {
 const ProductCarousel = ({ images, title }) => {
   return (
     <>
-      <section className="carousel-section my-5">
+      <section className="carousel-section mt-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 text-center">
