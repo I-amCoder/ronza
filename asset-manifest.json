@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ronza/static/css/main.b9c5b7fb.css",
-    "main.js": "/ronza/static/js/main.d7ccf90a.js",
+    "main.js": "/ronza/static/js/main.d01a5138.js",
     "static/js/787.8bb1facd.chunk.js": "/ronza/static/js/787.8bb1facd.chunk.js",
     "static/media/jun.jpg": "/ronza/static/media/jun.2af0cb707dbb29a3b4f2.jpg",
     "static/media/contact-bg.jpg": "/ronza/static/media/contact-bg.a286bacb2e1b83920fda.jpg",
@@ -11,11 +11,11 @@
     "static/media/revicons.woff": "/ronza/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/ronza/index.html",
     "main.b9c5b7fb.css.map": "/ronza/static/css/main.b9c5b7fb.css.map",
-    "main.d7ccf90a.js.map": "/ronza/static/js/main.d7ccf90a.js.map",
+    "main.d01a5138.js.map": "/ronza/static/js/main.d01a5138.js.map",
     "787.8bb1facd.chunk.js.map": "/ronza/static/js/787.8bb1facd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9c5b7fb.css",
-    "static/js/main.d7ccf90a.js"
+    "static/js/main.d01a5138.js"
   ]
 }
