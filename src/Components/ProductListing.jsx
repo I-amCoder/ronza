@@ -29,7 +29,7 @@ const ProductListing = () => {
           <div className="category-tabs">
             <div className="tab-item">
               <button
-                className={currentCategory === "All" ? "active" : ""}
+                className={`shadow ${currentCategory === 'All' ? "active" : ""}`}
                 onClick={() => setCurrentCategory("All")}
               >
                 All

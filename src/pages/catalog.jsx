@@ -1,10 +1,11 @@
-import React, {  useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Search from "../Components/Search";
 import apiService from "../Services/ProductService";
 import ProductCard from "../Components/ProductCard";
 import ImageModal from "../Components/ImageModal";
 import Pagination from "../Components/Pagination";
+import { prettyDOM } from "@testing-library/react";
 
 const Catalog = () => {
   const location = useLocation();
@@ -74,7 +75,7 @@ const Catalog = () => {
           </div>
         </div>
         <div className="row justify-content-center">
-          {!isError &&
+          {!isError && searchResults.length > 0 ? (
             searchResults.map((product) => {
               return (
                 <div
@@ -87,7 +88,15 @@ const Catalog = () => {
                   />
                 </div>
               );
-            })}
+            })
+          ) : (
+            <div>
+               {!isLoading &&
+            "No Products"
+            } 
+                
+            </div>
+          )}
         </div>
         <Pagination
           currentPage={currentPage}

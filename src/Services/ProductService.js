@@ -26,7 +26,7 @@ export const getProducts = async (category, page = 1) => {
 export const searchProducts = async (query, page = 1) => {
   try {
     const response = await axios.get(
-      `${config.url.API_URL}/search-products/?q=${query}&page=${page}`
+      `${config.url.API_URL}/search-products/search?q=${query}&page=${page}`
     );
     return response.data;
   } catch (error) {
