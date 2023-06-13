@@ -35,6 +35,7 @@ const Product = ({ category }) => {
     // Check if new Category is selected other go with current pagination
     if (prevCatRef.current !== category) {
       setCurrentPage(1);
+      setProducts([]);
     }
     loadProducts();
     prevCatRef.current = category;

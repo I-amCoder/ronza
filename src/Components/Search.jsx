@@ -28,7 +28,7 @@ const Search = () => {
                 className="form-control search-input"
               />
 
-              <button onClick={handleSearch} className="btn-grad mt-4">
+              <button onClick={()=>handleSearch({key:"Enter"})} className="btn-grad mt-4">
                 Search
               </button>
             </div>
