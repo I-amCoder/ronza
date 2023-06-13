@@ -1,9 +1,7 @@
 import React from "react";
-import mailImage from "../assets/contact-mail.png";
 import image from "../assets/contact-bg.jpg";
 import { BsEnvelope } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-import Skeleton from "react-loading-skeleton";
 
 const ContactUs = () => {
   return (
@@ -12,7 +10,7 @@ const ContactUs = () => {
         <div className="container ">
           <div className="row align-items-center justify-content-center">
             <div className="col-md-6 image-col">
-              <img className="contact-image" src={image} alt="Contact-image" />
+              <img className="contact-image" src={image} alt={"Helo"} />
               <div className="overley-text">
                 <div className="row">
                   <div className="col-auto">

@@ -8,9 +8,8 @@ const ProductListing = () => {
 
   const fetchCategories = async () => {
     try {
-      await apiService.getCategories().then((data) => {
-        setCategories(data.data);
-      });
+      const data = await apiService.getCategories();
+      setCategories(data.data);
     } catch (e) {
       console.log(e);
     }
@@ -40,7 +39,8 @@ const ProductListing = () => {
               <div key={category.id} className="tab-item">
                 <button
                   key={category.id}
-                  className={currentCategory === category.id ? "active" : ""}
+                  className={`shadow ${currentCategory === category.id ? "active" : ""}`}
+                  
                   onClick={() => setCurrentCategory(category.id)}
                 >
                   {category.name}

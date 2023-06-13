@@ -6,22 +6,37 @@ export const getCategories = async () => {
     const response = await axios.get(`${config.url.API_URL}/get-categories`);
     return response.data;
   } catch (error) {
-    console.error('Error while fetching user:', error);
+    console.error("Error while fetching user:", error);
     throw error;
   }
 };
 
-export const getProducts = async (category,page=1)=>{
-    try {
-        const response = await axios.get(`${config.url.API_URL}/get-products/${category}?page=${page}`)
-        return response.data;
-    } catch (error) {
-        console(error);
-    }
-}
+export const getProducts = async (category, page = 1) => {
+  try {
+    const response = await axios.get(
+      `${config.url.API_URL}/get-products/${category}?page=${page}`
+    );
+    return response.data;
+  } catch (error) {
+    console(error);
+  }
+};
+
+// Search Service
+export const searchProducts = async (query, page = 1) => {
+  try {
+    const response = await axios.get(
+      `${config.url.API_URL}/search-products/?q=${query}&page=${page}`
+    );
+    return response.data;
+  } catch (error) {
+    console(error);
+  }
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    getCategories,
-    getProducts
+  getCategories,
+  getProducts,
+  searchProducts,
 };

@@ -6,12 +6,18 @@ import FeaturedProducts from "../Components/FeaturedProducts";
 import ContactUs from "../Components/ContactUs";
 import SocialSection from "../Components/SocialSection";
 import ProductListing from "../Components/ProductListing";
+import Search from "../Components/Search";
+import Hero from "../Components/Hero";
 
 const Home = () => {
-  const { images,data, loading } = useContext(SiteContext);
+  const { images,data, loading,hero } = useContext(SiteContext);
   // console.log(data.carousel);
   return (
     <>
+    <div className="header">
+        {!loading && <Hero hero={hero} />}
+      </div>
+        <Search />
       <ProductCarousel
         images={images}
         title={"Latest Products"}

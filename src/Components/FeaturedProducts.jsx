@@ -23,7 +23,7 @@ const FeaturedProducts = ({ images }) => {
                       Emilia-Romagna Region, Italy
                     </h6>
                     <div className="text-center">
-                      <a href="#" className="btn btn-warning buy-now-btn">
+                      <a href="/"  className="btn btn-warning buy-now-btn">
                         Buy Now
                       </a>
                     </div>

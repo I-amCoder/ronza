@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Skeleton from "react-loading-skeleton";
 import { SiteContext } from "../Contexts/SiteContext";
+import { Link } from "react-router-dom";
 
 const AppNav = () => {
   // Get Context Data For Navbar
@@ -42,21 +43,23 @@ const AppNav = () => {
         className={`navbar-light ${navBackground ? "shadow" : ""}`}
       >
         <Container>
-          <Navbar.Brand href="#home">
+          <Link className="nav-link" to={'/'}>
+
             <div className="nav-logo ">
               {loading ? (
                 <Skeleton width={100} height={30} baseColor="#ddd" />
               ) : (
-                data.site_name ?? "Ronza"
+                // data.logo_path ?? "Ronza"
+                <img src={data.logo_path} alt={data.site_name} className="logo-img" />
               )}
             </div>
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
             <Nav className="mx-auto nav-container">
-              <Nav.Link className="nav-link-item " href="#home">
+              <Link className="nav-link nav-link-item " to={'/'}>
                 Home
-              </Nav.Link>
+              </Link>
               <Nav.Link className="nav-link-item" href="#link">
                 Another LInk
               </Nav.Link>

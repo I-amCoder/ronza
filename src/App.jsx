@@ -1,26 +1,22 @@
-import React, { useContext } from "react";
+import React from "react";
 import AppNav from "./Components/AppNav";
 
 import Footer from "./Components/Footer";
-import Hero from "./Components/Hero";
 
-import "react-loading-skeleton/dist/skeleton.css";
 import { Route, Routes } from "react-router-dom";
+import "react-loading-skeleton/dist/skeleton.css";
 import Home from "./pages/Home";
-import { SiteContext } from "./Contexts/SiteContext";
+import Catalog from "./pages/catalog";
+
 
 const App = () => {
-  const context = useContext(SiteContext)
-  // console.log(context);
   return (
     <>
-      <div className="header">
-        <AppNav  ></AppNav>
-        {!context.loading && <Hero hero={context.hero} />}
-      </div>
+      <AppNav ></AppNav>
       <Routes >
         <Route path="/" >
           <Route path="/" index element={<Home />} />
+          <Route path="/search" index element={<Catalog />} />
         </Route>
       </Routes>
 

@@ -59,9 +59,7 @@ export const SiteContextProvider = ({ children }) => {
       console.log(e);
     })
   };
-  const processApi = (apiData) => {
-    setData(apiData);
-  };
+  
 
   return (
     <SiteContext.Provider value={contextData}>{children}</SiteContext.Provider>

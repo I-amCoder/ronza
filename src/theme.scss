@@ -1,0 +1,43 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+$theme-colors: (
+    "primary": #600167 ,
+    "secondary": #6c757d ,
+    "success": #28a745 ,
+    "warning": #ffc107 ,
+    "danger": #dc3545 ,
+    "info": #17a2b8 ,
+    "light": #f8f9fa ,
+    "dark": #343a40 ,
+    
+  );
+
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #da22ff 0%,
+    #600167 51%,
+    #da22ff 100%
+  );
+
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white !important;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";

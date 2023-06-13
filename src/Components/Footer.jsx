@@ -12,35 +12,35 @@ const Footer = () => {
               <a
                 className="icon facebook"
                 target={"_blank"}
-                href="//facebook.com/hacker.jhalla"
+                href="//facebook.com/hacker.jhalla" rel="noreferrer"
               >
                 <FaFacebook />
               </a>
-              <a className="icon youtube" target={"_blank"} href="#">
+              <a className="icon youtube" target={"_blank"} rel="noreferrer" href="helo">
                 <FaYoutube />
               </a>
-              <a className="icon instagram" target={"_blank"} href="#">
+              <a className="icon instagram" target={"_blank"} rel="noreferrer" href="helo">
                 <FaInstagram />
               </a>
-              <a className="icon twitter" target={"_blank"} href="#">
+              <a className="icon twitter" target={"_blank"} rel="noreferrer" href="helo">
                 <FaTwitter />
               </a>
             </div>
           </div>
           <div className="col-md-6">
-            <a className="nav-link text-white" href="">
+            <a className="nav-link text-white" href="l">
               Privacy Policy
             </a>
-            <a className="nav-link text-white" href="">
+            <a className="nav-link text-white" href="h">
               Terms & Conditions
             </a>
-            <a className="nav-link text-white" href="">
+            <a className="nav-link text-white" href="h">
               Other Link
             </a>
-            <a className="nav-link text-white" href="">
+            <a className="nav-link text-white" href="h">
               Whatfoodsmenu
             </a>
-            <a className="nav-link text-white" href="">
+            <a className="nav-link text-white" href="h">
               More Stores
             </a>
           </div>
