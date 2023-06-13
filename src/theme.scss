@@ -3,7 +3,7 @@
 /* make the customizations */
 $theme-colors: (
     "primary": #600167 ,
-    "secondary": #6c757d ,
+    "secondary": #f9dd94 ,
     "success": #28a745 ,
     "warning": #ffc107 ,
     "danger": #dc3545 ,
@@ -28,7 +28,7 @@ $theme-colors: (
   transition: 0.5s;
   background-size: 200% auto;
   color: white !important;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: none;
   border-radius: 10px;
   display: inline-block;
 }

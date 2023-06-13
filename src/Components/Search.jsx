@@ -13,10 +13,10 @@ const Search = () => {
     navigate(`/search?q=${query}`)
   };
   return (
-    <section className="search-section bg-primary py-5">
+    <section className="search-section bg-light py-5">
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-md-8 text-center search">
+          <div className="col-md-8 text-center search text-primary">
             <h3>Discover Your Perfect Match</h3>
             <div className="search-container mt-3">
               <input

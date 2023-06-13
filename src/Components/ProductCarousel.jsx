@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { SiteContext } from "../Contexts/SiteContext";
 
 const responsive = {
   superLargeDesktop: {
@@ -22,7 +23,10 @@ const responsive = {
   },
 };
 
-const ProductCarousel = ({ images, title }) => {
+const ProductCarousel = ({ title }) => {
+  const {loading,data} = useContext(SiteContext);
+
+
   return (
     <>
       <section className="carousel-section mt-5">
@@ -47,20 +51,22 @@ const ProductCarousel = ({ images, title }) => {
                 infinite
                 responsive={responsive}
               >
-                {images.map((image, index) => {
+                {!loading && data.newArrivals.map((product, index) => {
                   return (
                     <div key={index} className="card p-3  carousel-card m-3 ">
                       <img
                         className="card-img-top shadow"
-                        src={image.urls.small}
-                        alt={image.description || "helo image"}
+                        src={product.imagePath}
+                        alt={product.title || "helo image"}
                       />
                       <div className="card-body text-center">
                         <h5 className="card-title mt-3">
-                          {image.description || "Product Title"}
+                          {product.title || "Product Title"}
                         </h5>
-                        <p className="fw-bold discounted-price">$20.00</p>
-                        <p className="fw-bold">$10.00</p>
+                        <p className="fw-bold discounted-price">
+                          ${product.price}
+                        </p>
+                        <p className="fw-bold">${product.discounted_price}</p>
                       </div>
                     </div>
                   );

@@ -51,6 +51,7 @@ export const SiteContextProvider = ({ children }) => {
   }, []);
 
   const loadHomePageData =async () => {
+    setLoading(true);
     await axios.get(`${config.url.API_URL}/home-stuff`)
     .then((response)=>{
       setData(response.data.data);

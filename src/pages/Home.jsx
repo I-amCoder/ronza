@@ -19,8 +19,7 @@ const Home = () => {
       </div>
         <Search />
       <ProductCarousel
-        images={images}
-        title={"Latest Products"}
+        title={"New Arrivals"}
       ></ProductCarousel>
       <ProductListing />
       <FeaturedProducts images={images} />
