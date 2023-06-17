@@ -1,34 +1,16 @@
 
-.header {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(15, 8, 14, 0.642) 0%,
-      rgba(10, 10, 10, 0.8) 100%
-    ),
-    url("/src/assets/jun.jpg");
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-}
 /* .c-caption{
   background-color: #33333384;
   padding: 1rem 0;
 } */
 
-.search-section .search{
-color: var(--primary);
+.search-section .search {
+  color: var(--primary);
 }
-.search-input:focus{
+.search-input:focus {
   box-shadow: none;
 }
 
-
-.carousel-image {
-  width: 100%;
-  height: 80vh;
-  filter: brightness(60%);
-  object-fit: cover;
-}
 .nav-container {
   display: flex;
   justify-content: center;
@@ -69,7 +51,7 @@ color: var(--primary);
   font-weight: bolder;
   font-size: 2rem;
 }
-.logo-img{
+.logo-img {
   width: 80px;
 }
 .hero-section {
@@ -116,26 +98,25 @@ color: var(--primary);
 .feature-text p {
   text-align: center;
 }
-.product-section{
+.product-section {
   margin-top: 100px;
 }
 
-.details-section{
+.details-section {
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
-.details-section .product-title{
+.details-section .product-title {
   font-size: xx-large;
   font-weight: bold;
 }
-.details-section .product-subtitle{
+.details-section .product-subtitle {
   /* font-size: xx-large; */
   font-weight: bold;
 }
 
-
-.product-detail-img{
+.product-detail-img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -524,7 +505,6 @@ textarea.input100 {
   background-color: #333;
 }
 
-
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -587,12 +567,11 @@ textarea.input100 {
 .product:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.modal-image{
+.modal-image {
   width: 100%;
   transition: opacity 0.3s ease;
-
 }
-.grid-img{
+.grid-img {
   width: 100%;
   height: 50px;
   object-fit: cover;
@@ -615,22 +594,7 @@ textarea.input100 {
     text-align: center;
   }
 }
-@media only screen and (max-width: 600px) {
-  .carousel-image,
-  .header {
-    height: 40vh;
-  }
-}
-@media only screen and (max-width: 425px) {
-  /*Small smartphones [325px -> 425px]*/
-  .carousel-image,
-  .header {
-    height: 40vh;
-  }
-  .carousel-title {
-    font-size: 1rem;
-  }
-}
+
 @media (max-width: 992px) {
   .contact100-form {
     width: 60%;
@@ -658,7 +622,7 @@ textarea.input100 {
     margin-right: 10px;
     margin-bottom: 10px;
   }
-  .grid-img{
+  .grid-img {
     height: 35px;
   }
 }

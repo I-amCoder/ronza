@@ -5,7 +5,6 @@ import apiService from "../Services/ProductService";
 import ProductCard from "../Components/ProductCard";
 import ImageModal from "../Components/ImageModal";
 import Pagination from "../Components/Pagination";
-import { prettyDOM } from "@testing-library/react";
 
 const Catalog = () => {
   const location = useLocation();

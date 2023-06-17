@@ -7,16 +7,14 @@ import ContactUs from "../Components/ContactUs";
 import SocialSection from "../Components/SocialSection";
 import ProductListing from "../Components/ProductListing";
 import Search from "../Components/Search";
-import Hero from "../Components/Hero";
+import Hero from "../Components/MainCarousel/Hero";
 
 const Home = () => {
   const { images,data, loading,hero } = useContext(SiteContext);
   // console.log(data.carousel);
   return (
     <>
-    <div className="header">
-        {!loading && <Hero hero={hero} />}
-      </div>
+    <Hero />
         <Search />
       <ProductCarousel
         title={"New Arrivals"}

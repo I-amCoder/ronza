@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SiteContext } from "../Contexts/SiteContext";
@@ -24,8 +24,7 @@ const responsive = {
 };
 
 const ProductCarousel = ({ title }) => {
-  const {loading,data} = useContext(SiteContext);
-
+  const { loading, data } = useContext(SiteContext);
 
   return (
     <>
@@ -51,26 +50,27 @@ const ProductCarousel = ({ title }) => {
                 infinite
                 responsive={responsive}
               >
-                {!loading && data.newArrivals.map((product, index) => {
-                  return (
-                    <div key={index} className="card p-3  carousel-card m-3 ">
-                      <img
-                        className="card-img-top shadow"
-                        src={product.imagePath}
-                        alt={product.title || "helo image"}
-                      />
-                      <div className="card-body text-center">
-                        <h5 className="card-title mt-3">
-                          {product.title || "Product Title"}
-                        </h5>
-                        <p className="fw-bold discounted-price">
-                          ${product.price}
-                        </p>
-                        <p className="fw-bold">${product.discounted_price}</p>
+                {!loading &&
+                  data.newArrivals.map((product, index) => {
+                    return (
+                      <div key={index} className="card p-3  carousel-card m-3 ">
+                        <img
+                          className="card-img-top shadow"
+                          src={product.imagePath}
+                          alt={product.title || "helo image"}
+                        />
+                        <div className="card-body text-center">
+                          <h5 className="card-title mt-3">
+                            {product.title || "Product Title"}
+                          </h5>
+                          <p className="fw-bold discounted-price">
+                            ${product.price}
+                          </p>
+                          <p className="fw-bold">${product.discounted_price}</p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </Carousel>
             </div>
           </div>
