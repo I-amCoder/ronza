@@ -61,6 +61,13 @@
   .carousel-image {
     height: 60vh;
   }
+  .carousel-caption {
+    text-align: center;
+    position: relative;
+    bottom: unset;
+    text-align: left;
+    padding: 30px;
+  }
 }
 @media only screen and (max-width: 425px) {
   /*Small smartphones [325px -> 425px]*/
@@ -75,6 +82,7 @@
     top: 110%;
   }
   .carousel-caption {
+    text-align: center;
     position: relative;
     bottom: unset;
     text-align: left;

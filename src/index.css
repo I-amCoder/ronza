@@ -605,6 +605,9 @@ textarea.input100 {
   }
 }
 @media (max-width: 768px) {
+  .carousel-title {
+    font-size: 1rem;
+  }
   .contact100-form {
     width: 100%;
   }
@@ -627,6 +630,9 @@ textarea.input100 {
   }
 }
 @media (max-width: 576px) {
+  .carousel-title {
+    font-size: 1rem;
+  }
   .contact100-form {
     padding: 56px 15px 63px;
   }
