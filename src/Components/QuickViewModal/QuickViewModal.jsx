@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import { Modal } from "react-bootstrap";
+import "./modal.css"
 
-const ImageModal = ({ closeModal, showModal, data }) => {
+const QuickViewModal = ({ closeModal, showModal, data }) => {
   const imageRef = useRef(null);
   const { imagePath = "", images = [] } = data;
 
   return (
     <>
-      <Modal show={showModal} onHide={closeModal} size="xl" centered>
+      <Modal className="custom-modal" show={showModal} onHide={closeModal} size="xl" centered>
         <Modal.Header closeButton>
           <Modal.Title>{data.title}</Modal.Title>
         </Modal.Header>
@@ -40,4 +41,4 @@ const ImageModal = ({ closeModal, showModal, data }) => {
   );
 };
 
-export default ImageModal;
+export default QuickViewModal;

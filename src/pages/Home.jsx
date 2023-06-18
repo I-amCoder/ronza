@@ -8,6 +8,7 @@ import SocialSection from "../Components/SocialSection";
 import ProductListing from "../Components/ProductListing";
 import Search from "../Components/Search";
 import Hero from "../Components/MainCarousel/Hero";
+import CategorySlider from "../Components/CategorySlider/CategorySlider";
 
 const Home = () => {
   const { images,data, loading,hero } = useContext(SiteContext);
@@ -16,9 +17,7 @@ const Home = () => {
     <>
     <Hero />
         <Search />
-      <ProductCarousel
-        title={"New Arrivals"}
-      ></ProductCarousel>
+      <CategorySlider title={"Browse Categories"} />
       <ProductListing />
       <FeaturedProducts images={images} />
       <ProductCarousel

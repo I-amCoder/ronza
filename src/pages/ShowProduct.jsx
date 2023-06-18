@@ -4,7 +4,7 @@ import apiService from "../Services/ProductService";
 import Search from "../Components/Search";
 
 const ShowProduct = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [product, setProduct] = useState(null);
@@ -12,7 +12,7 @@ const ShowProduct = () => {
   useEffect(() => {
     const loadProduct = async () => {
       try {
-        const response = await apiService.showProduct(id);
+        const response = await apiService.showProduct(slug);
         setProduct(response.data);
         setIsLoading(false);
         setError(false);
@@ -23,7 +23,7 @@ const ShowProduct = () => {
       }
     };
     loadProduct();
-  }, [id]);
+  }, [slug]);
 
   return (
     <section className="product-section">

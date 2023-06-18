@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { SiteContext } from "../Contexts/SiteContext";
+import { SiteContext } from "../../Contexts/SiteContext";
+import { Link } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
@@ -23,7 +24,7 @@ const responsive = {
   },
 };
 
-const ProductCarousel = ({ title }) => {
+const CategorySlider = ({ title }) => {
   const { loading, data } = useContext(SiteContext);
 
   return (
@@ -32,11 +33,6 @@ const ProductCarousel = ({ title }) => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 text-center">
-              {/* <img className="logo-image shadow " src={image} alt="logo" />
-              <p className="mt-2 fw-bold ">
-                Slogun line Lorem, ipsum dolor. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Error, laboriosam.
-              </p> */}
               <p className="my-4 h1 fw-bold underline">{title}</p>
             </div>
           </div>
@@ -51,23 +47,25 @@ const ProductCarousel = ({ title }) => {
                 responsive={responsive}
               >
                 {!loading &&
-                  data.newArrivals.map((product, index) => {
+                  data.categories.map((category, index) => {
                     return (
-                      <div key={index} className="card p-3   carousel-card m-3 ">
-                        <img
-                          className="card-img-top shadow bg-light"
-                          src={product.nonBgImg}
-                          alt={product.title || "helo image"}
-                        />
-                        <div className="card-body text-center">
-                          <h5 className="card-title mt-3">
-                            {product.title || "Product Title"}
-                          </h5>
-                          <p className="fw-bold discounted-price">
-                            ${product.price}
-                          </p>
-                          <p className="fw-bold">${product.discounted_price}</p>
-                        </div>
+                      <div
+                        key={index}
+                        className="card p-3   carousel-card m-3 "
+                      >
+                        <Link to={`/collection/${category.slug}`} style={{ textDecoration: "none", color: "black" }}>
+                          <img
+                            className="card-img-top shadow bg-light"
+                            src={category.logo_path}
+                            alt={category.title || "helo image"}
+                          />
+                          <div className="card-body text-center">
+                            <h5 className="card-title mt-3">
+                              {category.name || "Category"}
+                            </h5>
+                            <p className="fw-bold">{category.title}</p>
+                          </div>
+                        </Link>
                       </div>
                     );
                   })}
@@ -80,4 +78,4 @@ const ProductCarousel = ({ title }) => {
   );
 };
 
-export default ProductCarousel;
+export default CategorySlider;

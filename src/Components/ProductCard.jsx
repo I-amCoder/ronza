@@ -28,7 +28,7 @@ const ProductCard = ({ product, showImageModal }) => {
         <div className="row justify-content-center">
           <div className="col-auto text-center">
             <button
-              onClick={() => navigate(`/product/${product.id}`)}
+              onClick={() => navigate(`/product/${product.slug}`)}
               className="btn my-2 btn-grad"
             >
               Details

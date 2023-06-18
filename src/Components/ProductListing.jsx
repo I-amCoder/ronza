@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import apiService from "../Services/ProductService";
 import Product from "./Product";
+import { SiteContext } from "../Contexts/SiteContext";
 
 const ProductListing = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
-  const [categories, setCategories] = useState([]);
+  const { loading, data = { categories: [] } } = useContext(SiteContext);
 
-  const fetchCategories = async () => {
-    try {
-      const data = await apiService.getCategories();
-      setCategories(data.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  // const fetchCategories = async () => {
+  //   try {
+  //     const data = await apiService.getCategories();
+  //     setCategories(data.data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   return (
     <div className="product-listing-page">
@@ -29,18 +26,21 @@ const ProductListing = () => {
           <div className="category-tabs">
             <div className="tab-item">
               <button
-                className={`shadow ${currentCategory === 'All' ? "active" : ""}`}
+                className={`shadow ${
+                  currentCategory === "All" ? "active" : ""
+                }`}
                 onClick={() => setCurrentCategory("All")}
               >
                 All
               </button>
             </div>
-            {categories.map((category) => (
+            {data.categories.map((category) => (
               <div key={category.id} className="tab-item">
                 <button
                   key={category.id}
-                  className={`shadow ${currentCategory === category.id ? "active" : ""}`}
-                  
+                  className={`shadow ${
+                    currentCategory === category.id ? "active" : ""
+                  }`}
                   onClick={() => setCurrentCategory(category.id)}
                 >
                   {category.name}

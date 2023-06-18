@@ -8,6 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Home from "./pages/Home";
 import Catalog from "./pages/catalog";
 import ShowProduct from "./pages/ShowProduct";
+import Collection from "./pages/Collection";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
         <Route path="/">
           <Route path="/" index element={<Home />} />
           <Route path="/search" index element={<Catalog />} />
-          <Route path="/product/:id" index element={<ShowProduct />} />
+          <Route path="/product/:slug" index element={<ShowProduct />} />
+          <Route path="/collection/:slug" index element={<Collection />} />
         </Route>
       </Routes>
 

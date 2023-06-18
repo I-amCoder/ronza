@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import apiService from "../Services/ProductService";
-import ImageModal from "./ImageModal";
 import Pagination from "./Pagination";
 import ProductCard from "./ProductCard";
+import QuickViewModal from "./QuickViewModal/QuickViewModal";
 
 const Product = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -69,7 +69,7 @@ const Product = ({ category }) => {
         </div>
         <Pagination loaded={loaded} currentPage={currentPage} handleLoadMore={handleLoadMore} meta={meta}  />
       </div>
-      <ImageModal
+      <QuickViewModal
         showModal={showModal}
         closeModal={closeModal}
         data={modalData}

@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import Search from "../Components/Search";
 import apiService from "../Services/ProductService";
 import ProductCard from "../Components/ProductCard";
-import ImageModal from "../Components/ImageModal";
 import Pagination from "../Components/Pagination";
+import QuickViewModal from "../Components/QuickViewModal/QuickViewModal";
 
 const Catalog = () => {
   const location = useLocation();
@@ -104,7 +104,7 @@ const Catalog = () => {
           loaded={!isLoading}
         />
       </section>
-      <ImageModal
+      <QuickViewModal
         data={modalData}
         showModal={showModal}
         closeModal={closeModal}
