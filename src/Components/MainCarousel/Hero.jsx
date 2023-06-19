@@ -30,7 +30,7 @@ const Hero = () => {
                 return (
                   <Carousel.Item className="carousel-item bg-white" key={index}>
                     <img
-                      className="d-block w-100 carousel-image bg-secondary"
+                      className="d-block w-100 carousel-image bg-white"
                       src={product.nonBgImg}
                       alt="First slide"
                     />
