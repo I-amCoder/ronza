@@ -14,15 +14,16 @@ const App = () => {
   return (
     <>
       <AppNav></AppNav>
-      <Routes>
-        <Route path="/">
-          <Route path="/" index element={<Home />} />
-          <Route path="/search" index element={<Catalog />} />
-          <Route path="/product/:slug" index element={<ShowProduct />} />
-          <Route path="/collection/:slug" index element={<Collection />} />
-        </Route>
-      </Routes>
-
+      <div style={{ marginTop: "60px", minHeight:"60vh" }}>
+        <Routes>
+          <Route path="/">
+            <Route path="/" index element={<Home />} />
+            <Route path="/search" index element={<Catalog />} />
+            <Route path="/product/:slug" index element={<ShowProduct />} />
+            <Route path="/collection/:slug" index element={<Collection />} />
+          </Route>
+        </Routes>
+      </div>
       <Footer />
     </>
   );

@@ -567,16 +567,15 @@ textarea.input100 {
 .product:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.modal-image {
-  width: 100%;
-  transition: opacity 0.3s ease;
-}
 .grid-img {
   width: 100%;
   height: 50px;
   object-fit: cover;
   border: 2px solid purple;
   border-radius: 2px;
+}
+.common-header{
+  padding: 50px 0;
 }
 
 /* Landscape tablets and medium desktops */

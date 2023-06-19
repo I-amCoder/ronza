@@ -28,15 +28,15 @@ const Hero = () => {
                 const isActiveSlide = index === currentActiveIndex;
 
                 return (
-                  <Carousel.Item className="carousel-item bg-secondary" key={index}>
+                  <Carousel.Item className="carousel-item bg-white" key={index}>
                     <img
-                      className="d-block w-100 carousel-image"
+                      className="d-block w-100 carousel-image bg-secondary"
                       src={product.nonBgImg}
                       alt="First slide"
                     />
                     <Carousel.Caption className={`carousel-caption ${isActiveSlide && "active"}`}>
                       <div className="row">
-                        <div className="col-md-6 col-lg-4 col-xl-3 ">
+                        <div className="col-md-6 col-lg-4 col-xl-3">
                           <div className={`c-caption`}>
                             <p>{subtitle || "description"}</p>
                             <h3>{title || "title"}</h3>

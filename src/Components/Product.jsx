@@ -72,7 +72,7 @@ const Product = ({ category }) => {
       <QuickViewModal
         showModal={showModal}
         closeModal={closeModal}
-        data={modalData}
+        product={modalData}
       />
     </>
   );

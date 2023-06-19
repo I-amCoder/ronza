@@ -1,0 +1,13 @@
+.breadcrumb-item, .breadcrumb-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.breadcrumb-item.active{
+    color: grey;
+    text-decoration: dashed;
+}
+.breadcrumb-item + .breadcrumb-item::before{
+    content: ">";
+    padding: 0 0.8rem;
+}

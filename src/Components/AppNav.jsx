@@ -34,7 +34,7 @@ const AppNav = () => {
   return (
     <>
       <Navbar
-        fixed="top"
+        fixed={"top"}
         style={{
           transition: "1s ease",
           backgroundColor: navBackground ? "#white" : "white",

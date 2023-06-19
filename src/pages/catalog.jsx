@@ -65,7 +65,7 @@ const Catalog = () => {
   return (
     <div className="my-4">
       <div className="mt-5">
-        <Search />
+        <Search bg={"white"} title={`Found ${searchResults.length} results for "${query}"`} />
       </div>
       <section className="container catelog-section">
         <div className="row my-4">
@@ -105,7 +105,7 @@ const Catalog = () => {
         />
       </section>
       <QuickViewModal
-        data={modalData}
+        product={modalData}
         showModal={showModal}
         closeModal={closeModal}
       />

@@ -1,5 +1,5 @@
-.hero {
-  height: 100vh;
+.hero, .header, .custom-carousel, .carousel-image {
+  height: calc(100vh - 60px);
 }
 .header {
   background-image: linear-gradient(
@@ -8,18 +8,14 @@
       rgba(10, 10, 10, 0.8) 100%
     ),
     url("/src/assets/jun.jpg");
-  height: 100vh;
   background-size: cover;
   background-position: center;
 }
 
-.custom-carousel {
-  height: 100vh;
-}
 
 
 .carousel-indicators [data-bs-target] {
-  background-color: white;
+  background-color: black;
   width: 15px !important;
   border-radius: 50%;
   height: 14px !important;
@@ -27,13 +23,9 @@
 .carousel-indicators .active {
   background-color: #000 !important;
 }
-.carousel-item {
-  background-color: #ddd;
-}
 
 .carousel-image {
   width: 100%;
-  height: 100vh;
   object-fit: contain;
 }
 
@@ -58,10 +50,17 @@
 }
 
 .c-caption {
+  text-align: start ;
   color: black;
 }
 
 @media only screen and (max-width: 600px) {
+  .c-caption{
+    text-align: center;
+  }
+  .hero, .custom-carousel {
+    height: calc(87vh - 60px);
+  }
   .header,
   .carousel-image {
     height: 60vh;
@@ -72,6 +71,7 @@
     bottom: unset;
     text-align: left;
     padding: 30px;
+    left: 0;
   }
 }
 @media only screen and (max-width: 425px) {
