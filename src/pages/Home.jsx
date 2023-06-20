@@ -24,7 +24,6 @@ const Home = () => {
         images={images.slice(2, 7)}
         title={"Limited Sale"}
       ></ProductCarousel>
-      <ContactUs />
       <SocialSection data={data} loading={loading} />
     </>
   );
