@@ -2,12 +2,13 @@ import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./breadcrumb.css";
+import Skeleton from "react-loading-skeleton";
 
-const BreadCrumb = ({ links = [],title }) => {
+const BreadCrumb = ({ links = [], title }) => {
   return (
     <div className="common-header">
       <div className="text-center">
-        <h1>{title}</h1>
+        <h1>{title || ""}</h1>
         <div className="py-4">
           <Breadcrumb className="d-flex flex-row justify-content-center">
             {links.map((link, index) => {
@@ -19,7 +20,7 @@ const BreadCrumb = ({ links = [],title }) => {
                   linkAs={Link}
                   linkProps={{ to: link.path }}
                 >
-                  {link.title}
+                  {link.title || <Skeleton height={"10"} />}
                 </Breadcrumb.Item>
               );
             })}

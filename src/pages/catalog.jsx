@@ -2,22 +2,19 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Search from "../Components/Search";
 import apiService from "../Services/ProductService";
-import ProductCard from "../Components/ProductCard";
 import Pagination from "../Components/Pagination";
-import QuickViewModal from "../Components/QuickViewModal/QuickViewModal";
+import Collection from "../Components/Collection";
 
 const Catalog = () => {
   const location = useLocation();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [searchResults, setSearchResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [modalData, setModalData] = useState(false);
-  const [meta, setMeta] = useState({});
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get("q");
   const queryRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [meta, setMeta] = useState({});
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -52,20 +49,13 @@ const Catalog = () => {
     });
   };
 
-  const showImageModal = (product) => {
-    setModalData(product);
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setModalData({});
-  };
-
   return (
     <div className="my-4">
       <div className="mt-5">
-        <Search bg={"white"} title={`Found ${searchResults.length} results for "${query}"`} />
+        <Search
+          bg={"white"}
+          title={`Found ${searchResults.length} results for "${query}"`}
+        />
       </div>
       <section className="container catelog-section">
         <div className="row my-4">
@@ -73,30 +63,14 @@ const Catalog = () => {
             <h5>Search Results For: "{query}"</h5>
           </div>
         </div>
-        <div className="row justify-content-center">
-          {!isError && searchResults.length > 0 ? (
-            searchResults.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-sm-6 my-2 col-md-4 col-lg-3 "
-                >
-                  <ProductCard
-                    product={product}
-                    showImageModal={showImageModal}
-                  />
-                </div>
-              );
-            })
-          ) : (
-            <div>
-               {!isLoading &&
-            "No Products"
-            } 
-                
-            </div>
-          )}
+        <div className="container">
+          <Collection
+            isError={isError}
+            isLoading={isLoading}
+            products={searchResults}
+          />
         </div>
+
         <Pagination
           currentPage={currentPage}
           handleLoadMore={handleLoadMore}
@@ -104,11 +78,6 @@ const Catalog = () => {
           loaded={!isLoading}
         />
       </section>
-      <QuickViewModal
-        product={modalData}
-        showModal={showModal}
-        closeModal={closeModal}
-      />
     </div>
   );
 };

@@ -59,7 +59,7 @@
     text-align: center;
   }
   .hero, .custom-carousel {
-    height: calc(87vh - 60px);
+    height: calc(90vh - 60px);
   }
   .header,
   .carousel-image {

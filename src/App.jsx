@@ -1,5 +1,4 @@
 import React from "react";
-import AppNav from "./Components/AppNav";
 
 import Footer from "./Components/Footer";
 
@@ -9,11 +8,12 @@ import Home from "./pages/Home";
 import Catalog from "./pages/catalog";
 import ShowProduct from "./pages/ShowProduct";
 import Collection from "./pages/Collection";
+import AppNav from "./Components/Navbar/AppNav";
 
 const App = () => {
   return (
     <>
-      <AppNav></AppNav>
+      <AppNav />
       <div style={{ marginTop: "60px", minHeight:"60vh" }}>
         <Routes>
           <Route path="/">

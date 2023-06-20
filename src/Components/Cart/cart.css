@@ -1,0 +1,32 @@
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden */
+  width: 300px;
+  height: 100%;
+  background-color: grey;
+  transition: right 0.3s ease;
+}
+
+.cart-sidebar.open {
+  right: 0; /* Slide in from the right when open */
+}
+
+.cart-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: lightgray;
+}
+
+.cart-sidebar-body {
+  padding: 1rem;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

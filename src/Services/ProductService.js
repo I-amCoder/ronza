@@ -34,14 +34,23 @@ export const searchProducts = async (query, page = 1) => {
   }
 };
 
-export const showProduct = async (id)=>{
+export const showProduct = async (id) => {
   try {
     const response = await axios.get(`${config.url.API_URL}/product/${id}`);
     return response.data;
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+export const getCategory = async (slug) => {
+  try {
+    const response = await axios.get(`${config.url.API_URL}/category/${slug}`);
+    return response.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -49,4 +58,5 @@ export default {
   getProducts,
   searchProducts,
   showProduct,
+  getCategory,
 };

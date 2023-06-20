@@ -7,16 +7,18 @@ import reportWebVitals from "./reportWebVitals";
 import { SiteContextProvider } from "./Contexts/SiteContext";
 import { BrowserRouter } from "react-router-dom";
 
-import {config} from './config'
-
+import { config } from "./config";
+import CartContextProvider from "./Contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SiteContextProvider>
-      <BrowserRouter basename={config.url.base_url}>
-        <App />
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter basename={config.url.base_url}>
+          <App />
+        </BrowserRouter>
+      </CartContextProvider>
     </SiteContextProvider>
   </React.StrictMode>
 );

@@ -2,6 +2,7 @@ import React from "react";
 import { Spinner } from "react-bootstrap";
 
 const Pagination = ({ loaded, handleLoadMore, meta, currentPage }) => {
+  
   return (
     <div>
       {loaded ? (

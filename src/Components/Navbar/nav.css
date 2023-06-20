@@ -1,0 +1,24 @@
+.social-nav {
+  border-bottom: #ddd 1px solid;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  
+}
+
+.social-nav.show {
+  opacity: 1; /* Show with a smooth transition */
+  display: block;
+}
+
+.social-nav.hide {
+  display: none !important;
+}
+
+.social-nav .left a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+}
