@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,9 +41,9 @@ const Footer = () => {
             <a className="nav-link text-white" href="h">
               Whatfoodsmenu
             </a>
-            <a className="nav-link text-white" href="h">
-              More Stores
-            </a>
+            <Link className="nav-link text-white" to={"/contact-us"}>
+                Contact Us
+            </Link>
           </div>
         </div>
       </div>

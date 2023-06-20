@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./breadcrumb.css";
 import Skeleton from "react-loading-skeleton";
 
 const BreadCrumb = ({ links = [], title }) => {
+  useEffect(()=>{
+    const oldTitle =document.title;
+    document.title=title
+    return ()=>{
+      document.title = oldTitle
+    }
+  },[title])
   return (
     <div className="common-header">
       <div className="text-center">

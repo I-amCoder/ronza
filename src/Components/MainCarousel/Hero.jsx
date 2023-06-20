@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { SiteContext } from "../../Contexts/SiteContext";
 import Carousel from "react-bootstrap/Carousel";
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { data, loading } = useContext(SiteContext);
@@ -40,9 +41,9 @@ const Hero = () => {
                           <div className={`c-caption`}>
                             <p>{subtitle || "description"}</p>
                             <h3>{title || "title"}</h3>
-                            <button className="btn btn-outline-dark">
+                            <Link as={"button"} to={`/product/${product.slug}`} className="btn btn-outline-dark">
                               Shop Now
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

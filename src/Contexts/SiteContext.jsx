@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { config } from "../config";
+import { config } from "../utils/config";
 import staticApi from "../data.json";
 import axios from "axios";
 

@@ -7,8 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 import { SiteContextProvider } from "./Contexts/SiteContext";
 import { BrowserRouter } from "react-router-dom";
 
-import { config } from "./config";
+import { config } from "./utils/config";
 import CartContextProvider from "./Contexts/CartContext";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
     <SiteContextProvider>
       <CartContextProvider>
         <BrowserRouter basename={config.url.base_url}>
+          <ScrollToTop />
           <App />
         </BrowserRouter>
       </CartContextProvider>
