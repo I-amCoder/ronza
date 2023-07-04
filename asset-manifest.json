@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ronza/static/css/main.5b9bdc29.css",
-    "main.js": "/ronza/static/js/main.b01bbcd8.js",
+    "main.css": "/ronza/static/css/main.9a726c0e.css",
+    "main.js": "/ronza/static/js/main.1c66bc39.js",
     "static/js/787.8bb1facd.chunk.js": "/ronza/static/js/787.8bb1facd.chunk.js",
     "static/media/jun.jpg": "/ronza/static/media/jun.2af0cb707dbb29a3b4f2.jpg",
     "static/media/contact-bg.jpg": "/ronza/static/media/contact-bg.a286bacb2e1b83920fda.jpg",
@@ -9,12 +9,12 @@
     "static/media/revicons.ttf": "/ronza/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/ronza/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/ronza/index.html",
-    "main.5b9bdc29.css.map": "/ronza/static/css/main.5b9bdc29.css.map",
-    "main.b01bbcd8.js.map": "/ronza/static/js/main.b01bbcd8.js.map",
+    "main.9a726c0e.css.map": "/ronza/static/css/main.9a726c0e.css.map",
+    "main.1c66bc39.js.map": "/ronza/static/js/main.1c66bc39.js.map",
     "787.8bb1facd.chunk.js.map": "/ronza/static/js/787.8bb1facd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b9bdc29.css",
-    "static/js/main.b01bbcd8.js"
+    "static/css/main.9a726c0e.css",
+    "static/js/main.1c66bc39.js"
   ]
 }
