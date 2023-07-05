@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import apiService from "../Services/ProductService";
 import Pagination from "./Pagination";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard/ProductCard";
 import QuickViewModal from "./QuickViewModal/QuickViewModal";
 
 const Product = ({ category }) => {

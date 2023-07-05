@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SiteContext } from "../../Contexts/SiteContext";
 import { Link } from "react-router-dom";
+import "./slider.css"
 
 const responsive = {
   superLargeDesktop: {
@@ -51,11 +52,11 @@ const CategorySlider = ({ title }) => {
                     return (
                       <div
                         key={index}
-                        className="card p-3   carousel-card m-3 "
+                        className="card p-3  carousel-card m-3 "
                       >
                         <Link to={`/collection/${category.slug}`} style={{ textDecoration: "none", color: "black" }}>
                           <img
-                            className="card-img-top shadow bg-light"
+                            className="card-img-top category-slider-img shadow bg-light"
                             src={category.logo_path}
                             alt={category.title || "helo image"}
                           />

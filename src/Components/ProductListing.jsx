@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import apiService from "../Services/ProductService";
+import React, { useContext, useState } from "react";
 import Product from "./Product";
 import { SiteContext } from "../Contexts/SiteContext";
 
 const ProductListing = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
-  const { loading, data = { categories: [] } } = useContext(SiteContext);
+  const { data = { categories: [] } } = useContext(SiteContext);
 
   // const fetchCategories = async () => {
   //   try {

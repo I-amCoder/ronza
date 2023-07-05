@@ -1,32 +1,53 @@
-.cart-sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px; /* Initially hidden */
-  width: 300px;
-  height: 100%;
-  background-color: grey;
-  transition: right 0.3s ease;
+.cart-card {
+  border: none;
 }
 
-.cart-sidebar.open {
-  right: 0; /* Slide in from the right when open */
-}
-
-.cart-sidebar-header {
+.cart-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: lightgray;
+  justify-content: space-around;
+}
+.details-wrapper {
+  border-left: 1px solid #ddd;
+  padding-left: 10px;
 }
 
-.cart-sidebar-body {
-  padding: 1rem;
+.cart-box .image-wrapper img {
+  width: 80px;
+  padding: 5px;
+  height: 80px;
+  object-fit: cover;
 }
 
-.close-btn {
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
+.edit-qty span {
+  border: 1px solid #ddd;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.edit-qty .disabled {
+  color: rgba(49, 45, 45, 0.437);
+}
+
+.details-wrapper span {
   cursor: pointer;
+}
+.details-wrapper span .disabled {
+  cursor: default;
+}
+
+.product-item_title {
+  font-size: 1.01rem;
+  font-weight: 400;
+  max-width: 174px;
+  color: rgb(68, 68, 68);
+}
+.text-truncate {
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  white-space-collapse: collapse;
+  overflow: hidden;
+}
+
+.form-check-input:focus{
+  box-shadow: none;
 }

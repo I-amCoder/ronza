@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SiteContext } from "../Contexts/SiteContext";
+import { Link } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
@@ -53,21 +54,31 @@ const ProductCarousel = ({ title }) => {
                 {!loading &&
                   data.newArrivals.map((product, index) => {
                     return (
-                      <div key={index} className="card p-3   carousel-card m-3 ">
-                        <img
-                          className="card-img-top shadow bg-light"
-                          src={product.nonBgImg}
-                          alt={product.title || "helo image"}
-                        />
-                        <div className="card-body text-center">
-                          <h5 className="card-title mt-3">
-                            {product.title || "Product Title"}
-                          </h5>
-                          <p className="fw-bold discounted-price">
-                            ${product.price}
-                          </p>
-                          <p className="fw-bold">${product.discounted_price}</p>
-                        </div>
+                      <div
+                        key={index}
+                        className="card p-3   carousel-card m-3 "
+                      >
+                        <Link
+                          to={`/product/${product.slug}`}
+                          style={{ textDecoration: "none", color: "black" }}
+                        >
+                          <img
+                            className="card-img-top shadow bg-light"
+                            src={product.nonBgImg}
+                            alt={product.title || "helo image"}
+                          />
+                          <div className="card-body text-center">
+                            <h5 className="card-title mt-3">
+                              {product.title || "Product Title"}
+                            </h5>
+                            <p className="fw-bold discounted-price">
+                              ${product.price}
+                            </p>
+                            <p className="fw-bold">
+                              ${product.discounted_price}
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                     );
                   })}

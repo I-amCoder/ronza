@@ -6,15 +6,23 @@ import "./nav.css";
 import Skeleton from "react-loading-skeleton";
 import { SiteContext } from "../../Contexts/SiteContext";
 import { Link } from "react-router-dom";
-import { BsCart, BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import {
+  BsCart,
+  BsFacebook,
+  BsInstagram,
+  BsSearch,
+  BsStar,
+  BsWhatsapp,
+} from "react-icons/bs";
 import Cart from "../Cart/Cart";
 import { CartContext } from "../../Contexts/CartContext";
+import SearchCanvas from "../Search/SearchCanvas";
 
 const AppNav = () => {
   // Get Context Data For Navbar
   const contextData = useContext(SiteContext);
   const cartContext = useContext(CartContext);
-  const [socialDisplay, setSocialDisplay] = useState("block");
+
   const data = contextData.data ?? {
     site_name: "Ronza",
   };
@@ -36,6 +44,15 @@ const AppNav = () => {
     };
   }, []);
 
+  // Search Canvas
+  const [showSearch, setShowSearch] = useState(false);
+  const handleCloseSearch = () => {
+    setShowSearch(false);
+  };
+  const handleShowSearch = () => {
+    setShowSearch(true);
+  }
+
   return (
     <>
       <Navbar
@@ -51,7 +68,7 @@ const AppNav = () => {
       >
         <div
           style={{ display: "none" }}
-          className={`container social-nav ${navBackground ? "hide":"show"}`}
+          className={`container social-nav ${navBackground ? "hide" : "show"}`}
         >
           <div className="left">
             <a href="helo">
@@ -65,7 +82,7 @@ const AppNav = () => {
             </a>
           </div>
         </div>
-        <Container >
+        <Container>
           <Link className="nav-link" to={"/"}>
             <div className="nav-logo ">
               {loading ? (
@@ -95,14 +112,22 @@ const AppNav = () => {
               <Nav.Link className="nav-link-item" href="#link">
                 Our Store
               </Nav.Link>
-              <Nav.Link onClick={cartContext.handleShow} className="nav-link-item" href="#link">
-                <BsCart  title="Cart" />
-              </Nav.Link>
             </Nav>
+            <div className="social-section justify-self-end">
+              <span className="cart-icon nav-icon">
+              <BsCart onClick={cartContext.handleShow}  />
+                {cartContext.count>0 &&
+                  <span className="cart-count">{cartContext.count}</span>
+                }
+              </span>
+              <BsStar className="nav-icon" />
+              <BsSearch onClick={handleShowSearch} className="nav-icon" />
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Cart  />
+      <Cart />
+      <SearchCanvas show={showSearch} setShow={setShowSearch} handleClose={handleCloseSearch} />
     </>
   );
 };

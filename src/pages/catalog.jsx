@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import Search from "../Components/Search";
+import Search from "../Components/Search/Search";
 import apiService from "../Services/ProductService";
 import Pagination from "../Components/Pagination";
 import Collection from "../Components/Collection";

@@ -3,15 +3,14 @@ import React, { useContext } from "react";
 import { SiteContext } from "../Contexts/SiteContext";
 import ProductCarousel from "../Components/ProductCarousel";
 import FeaturedProducts from "../Components/FeaturedProducts";
-import ContactUs from "../Components/ContactUs";
 import SocialSection from "../Components/SocialSection";
 import ProductListing from "../Components/ProductListing";
-import Search from "../Components/Search";
+import Search from "../Components/Search/Search";
 import Hero from "../Components/MainCarousel/Hero";
 import CategorySlider from "../Components/CategorySlider/CategorySlider";
 
 const Home = () => {
-  const { images,data, loading,hero } = useContext(SiteContext);
+  const { images,data, loading } = useContext(SiteContext);
   // console.log(data.carousel);
   return (
     <>

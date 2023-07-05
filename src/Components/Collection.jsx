@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard/ProductCard";
 import QuickViewModal from "./QuickViewModal/QuickViewModal";
 
 const Collection = ({ products = [], isError = false, isLoading = true }) => {
