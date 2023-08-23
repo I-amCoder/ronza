@@ -15,8 +15,8 @@ const BreadCrumb = ({ links = [], title }) => {
   return (
     <div className="common-header">
       <div className="text-center">
-        <h1>{title || ""}</h1>
-        <div className="py-4">
+        <h1 className="h1">{title || ""}</h1>
+        <div>
           <Breadcrumb className="d-flex flex-row justify-content-center">
             {links.map((link, index) => {
               const isCurrent = index + 1 === links.length;

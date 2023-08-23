@@ -1,8 +1,9 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { CartContext } from "../../Contexts/CartContext";
 import { BsTrash } from "react-icons/bs";
 import "./cart.css";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -145,7 +146,11 @@ function Cart() {
                 </button>
               </div>
               <div className="col-6">
-                <button className="btn w-100 btn-dark">Checkout</button>
+                <button className="btn w-100 btn-dark">
+                  <Link className="nav-link" to={"/checkout"}>
+                    Checkout
+                  </Link>
+                </button>
               </div>
             </div>
           )}

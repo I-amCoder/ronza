@@ -10,6 +10,7 @@ import ShowProduct from "./pages/ShowProduct";
 import Collection from "./pages/Collection";
 import AppNav from "./Components/Navbar/AppNav";
 import ContactUs from "./pages/ContactUs";
+import Checkout from "./pages/checkout";
 
 const App = () => {
   return (
@@ -19,9 +20,10 @@ const App = () => {
         <Routes>
           <Route path="/">
             <Route path="/" index element={<Home />} />
-            <Route path="/search" index element={<Catalog />} />
-            <Route path="/product/:slug" index element={<ShowProduct />} />
-            <Route path="/collection/:slug" index element={<Collection />} />
+            <Route path="/search" element={<Catalog />} />
+            <Route path="/product/:slug" element={<ShowProduct />} />
+            <Route path="/collection/:slug" element={<Collection />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/contact-us" element={<ContactUs />} />
           </Route>
         </Routes>

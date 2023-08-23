@@ -41,12 +41,6 @@
   max-width: 174px;
   color: rgb(68, 68, 68);
 }
-.text-truncate {
-  text-overflow: ellipsis;
-  text-wrap: nowrap;
-  white-space-collapse: collapse;
-  overflow: hidden;
-}
 
 .form-check-input:focus{
   box-shadow: none;

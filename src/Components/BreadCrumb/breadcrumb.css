@@ -1,3 +1,7 @@
+.common-header{
+    background-color: #e5e4e2;
+}
+
 .breadcrumb-item, .breadcrumb-item a{
     text-decoration: none;
     color: black;
@@ -9,5 +13,5 @@
 }
 .breadcrumb-item + .breadcrumb-item::before{
     content: ">";
-    padding: 0 0.8rem;
+    padding: 0 0.2rem;
 }

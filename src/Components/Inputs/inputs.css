@@ -1,0 +1,11 @@
+.form-control{
+    border-radius: 2px;
+    border-width: 1.5px;
+    padding: 8px;
+}
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
+    border-color: black;
+    border-width: 2px;
+}

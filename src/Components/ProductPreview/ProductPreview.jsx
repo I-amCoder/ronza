@@ -3,21 +3,22 @@ import "./ProductPreview.css";
 import { BiHeart } from "react-icons/bi";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { CartContext } from "../../Contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductPreview = ({ product }) => {
   const mainImageRef = useRef(null);
   const changeImage = (img) => {
     mainImageRef.current.src = img.path;
   };
-  const { addToCart, removeFromCart,productInCart } = useContext(CartContext);
+  const { addToCart, removeFromCart, productInCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
     addToCart(product);
   };
 
-  const handleRemoveFromCart =()=>{
+  const handleRemoveFromCart = () => {
     removeFromCart([product.id]);
-  }
+  };
 
   return (
     <>
@@ -115,13 +116,20 @@ const ProductPreview = ({ product }) => {
                   </div>
                 </div>
                 <div className="buttons d-flex flex-row mt-5 gap-3">
-                  <button className="btn btn-outline-dark">Buy Now</button>
+                  <button className="btn btn-outline-dark">
+                    <Link to={{ pathname: "/checkout", search:  product.slug }}  className="nav-link">
+                      Buy Now
+                    </Link>
+                  </button>
                   {!productInCart(product) ? (
                     <button onClick={handleAddToCart} className="btn btn-dark">
                       Add to Cart
                     </button>
                   ) : (
-                    <button onClick={handleRemoveFromCart} className="btn btn-dark">
+                    <button
+                      onClick={handleRemoveFromCart}
+                      className="btn btn-dark"
+                    >
                       Remove From Cart
                     </button>
                   )}
